@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>demo</title>
+    <script type="module" defer>
+      const response = await fetch("/api/hello")
+      const json = await response.json();
+
+      document.querySelector("#status").innerText = response.status;
+      document.querySelector("#message").innerText = json.message;
+    </script>
+  </head>
+  <body>
+    <h1>minimal vercel</h1>
+    <p id="status"></p>
+    <p id="message"></p>
+  </body>
+</html>
